@@ -16,6 +16,7 @@ public class BaseEntity {
 	
 	public BaseEntity() {
 		super();
+		this.createdAt = new Date();
 	}
 
 	public BaseEntity(String _id, Date createdAt) {
