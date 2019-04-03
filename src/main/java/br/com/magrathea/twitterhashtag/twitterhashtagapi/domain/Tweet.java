@@ -5,6 +5,9 @@ import java.util.List;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+
 /**
  * Tweets collected by us  
  * @author kico
@@ -12,6 +15,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "tweets")
 public class Tweet extends BaseEntity {
 
+	@JsonSerialize(using = ToStringSerializer.class)
 	private long statusId;
 	private Date publishDate;
 	private String author;

@@ -1,0 +1,40 @@
+body {
+  padding-top: 5rem;
+}
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+h1{
+	color:#0000FF;
+}
+
+h2{
+	color:#FF0000;
+}
+.label-info {
+    background-color: #de5b5b;
+    margin-top: 2px;
+}
+
+.label {
+    display: inline;
+/*     //padding: .2em .6em .3em; */
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+
+.bootstrap-tagsinput .tag {
+    margin-right: 2px;
+    margin-top: 2px;
+    color: white;
+    padding: 4px 6px;
+    line-height: 22px;
+}

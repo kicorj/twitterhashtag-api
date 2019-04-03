@@ -66,7 +66,7 @@ public class TwitterhashtagApiApplicationTests {
 	public void setHashtags() {
 		
 		List<Hashtag> list = new ArrayList<Hashtag>();
-		list.add(new Hashtag("Vasco"));
+		list.add(new Hashtag("TanoAr"));
 		list.add(new Hashtag("Vascão"));
 		
 		hashtagService.removeAll();
@@ -79,12 +79,12 @@ public class TwitterhashtagApiApplicationTests {
 	@Test
 	public void saveTweet() {
 		Tweet t = new Tweet();
-		t.setAuthor("Kico");
+		t.setAuthor("Kicorj");
 		t.setCreatedAt(new Date());
 		List<String> list = new ArrayList<String>();
-		list.add("Vascão campeão carioca");
+		list.add("TanoAr");
 		t.setHashtagsFound(list);
-		t.setMessage("Blablablablabla...");
+		t.setMessage("Este é um tweet de teste com a hashtag #TanoAr ...");
 		t.setPublishDate(new Date());
 		t.setStatusId(12345);
 		
