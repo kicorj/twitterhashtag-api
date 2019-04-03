@@ -1,12 +1,10 @@
 # twitterhashtag-api
 
-This projects is about MagratheaLabs Challenge
+This projects is about MagratheaLabs Challenge. It contains the web application and also the services api. 
 
 ## Authors
 
 * **Francisco Cardoso**
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
