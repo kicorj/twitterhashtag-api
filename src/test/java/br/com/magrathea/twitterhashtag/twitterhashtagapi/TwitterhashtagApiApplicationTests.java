@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import br.com.magrathea.twitterhashtag.twitterhashtagapi.domain.Hashtag;
@@ -34,9 +36,6 @@ public class TwitterhashtagApiApplicationTests {
 	@Autowired
 	private HashtagService hashtagService;
 	
-	@Autowired
-	private TweetService tweetService;
-	
 	@LocalServerPort
 	private int port;
 	
@@ -48,20 +47,7 @@ public class TwitterhashtagApiApplicationTests {
 	@Test
 	public void contextLoads() {
 	}
-	
 
-	@Test
-	public void testGetAllHashtags() {
-//		HttpHeaders headers = new HttpHeaders();
-//		HttpEntity<String> entity = new HttpEntity<String>(null, headers);
-//		ResponseEntity<String> response = restTemplate.exchange(getRootUrl() + "/users",
-//		HttpMethod.GET, entity, String.class);
-//		Assert.assertNotNull(response.getBody());
-		
-		 List<Hashtag> list = hashtagService.findAll();
-		 Assert.assertNotNull(list);
-	}
-	
 	@Test
 	public void setHashtags() {
 		
@@ -88,15 +74,11 @@ public class TwitterhashtagApiApplicationTests {
 		t.setPublishDate(new Date());
 		t.setStatusId(12345);
 		
-		tweetService.upsertTweet(t);
+		HttpEntity<Tweet> request = new HttpEntity<Tweet>(t);
+	    ResponseEntity<Tweet> response = restTemplate.postForEntity(getRootUrl() + "/api/tweets", request, Tweet.class);
+	    
+	    Assert.assertNotNull(response.getBody());
 	}
 
-
-//	@Test
-//	public void testGetHashtagById() {
-//	User user = restTemplate.getForObject(getRootUrl() + "/users/1", User.class);
-//	System.out.println(user.getFirstName());
-//	Assert.assertNotNull(user);
-//	}
 
 }
