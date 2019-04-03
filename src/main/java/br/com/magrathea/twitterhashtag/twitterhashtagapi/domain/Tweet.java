@@ -3,6 +3,7 @@ package br.com.magrathea.twitterhashtag.twitterhashtagapi.domain;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -15,6 +16,7 @@ import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 @Document(collection = "tweets")
 public class Tweet extends BaseEntity {
 
+	@Indexed(name="statusId", unique = true)
 	@JsonSerialize(using = ToStringSerializer.class)
 	private long statusId;
 	private Date publishDate;
